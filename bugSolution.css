@@ -1,0 +1,17 @@
+The solution is to avoid using the `@apply` directive with pseudo-selectors. Instead, define the styles for the pseudo-selectors directly in the class where you need them:
+
+```css
+/* bugSolution.css */
+.button {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+}
+
+.button:hover {
+  @apply bg-blue-700;
+}
+
+.button:focus {
+  @apply outline-none ring-2 ring-blue-500;
+}
+```
+This ensures that the styles are correctly applied on hover and focus.
